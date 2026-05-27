@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.header {
+    width: 100%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+.logo img {
+    width: 140px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #b57b45;
+}
+
+.nav-btn {
+    padding: 14px 28px;
+    background: #b57b45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #8f5d34;
+    transform: translateY(-3px);
+}
+
+/* HERO SECTION */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 80px;
+    gap: 60px;
+    background: linear-gradient(to right, #fff8f1, #f3ebe3);
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 65px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.hero-btn {
+    padding: 16px 35px;
+    border: none;
+    background: #b57b45;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #8f5d34;
+    transform: scale(1.05);
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* SOCIAL */
+
+.social-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+}
+
+/* RASM SIZE */
+.social-icons img {
+    width: 45px;
+    /* <<< KICHIK QILADI */
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* doira qiladi */
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* CATEGORY */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 80px;
+}
+
+.category-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-card img {
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* NEW SECTION */
+
+.new-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    gap: 60px;
+    background: #fff;
+}
+
+.new-text {
+    width: 50%;
+}
+
+.new-text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.new-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.new-text button {
+    padding: 15px 30px;
+    border: none;
+    background: #b57b45;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.new-image {
+    width: 50%;
+}
+
+.new-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* SUBSCRIPTION */
+
+.subscription {
+    padding: 80px;
+}
+
+.subscription-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: white;
+    padding: 50px;
+    border-radius: 25px;
+}
+
+.subscription-image {
+    width: 50%;
+}
+
+.subscription-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.subscription-text {
+    width: 50%;
+}
+
+.subscription-text h1 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.subscription-text p {
+    margin-bottom: 20px;
+}
+
+.subscription-text ul {
+    margin-left: 20px;
+}
+
+.subscription-text li {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* USP */
+
+.usp-section {
+    padding: 80px;
+    text-align: center;
+}
+
+.usp-title {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.usp-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.usp-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.usp-card:hover {
+    transform: translateY(-10px);
+}
+
+.usp-card img {
+    width: 100px;
+    margin-bottom: 25px;
+}
+
+.usp-card h2 {
+    margin-bottom: 15px;
+}
+
+.usp-card p {
+    line-height: 1.7;
+}
+
+/* BREWING */
+
+.brewing-section {
+    padding: 100px 80px;
+    text-align: center;
+    background: #fff;
+}
+
+.brewing-section h1 {
+    font-size: 55px;
+    margin-bottom: 25px;
+}
+
+.brewing-section h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.brewing-section p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.brewing-section button {
+    padding: 15px 35px;
+    background: #b57b45;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+/* CAFE */
+
+.cafe-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px;
+}
+
+.cafe-image {
+    width: 50%;
+}
+
+.cafe-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.cafe-text {
+    width: 50%;
+}
+
+.cafe-text h1 {
+    font-size: 55px;
+    margin-bottom: 25px;
+}
+
+.cafe-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cafe-text button {
+    padding: 15px 35px;
+    border: none;
+    background: #b57b45;
+    color: white;
+    border-radius: 10px;
+}
+
+/* STORY */
+
+.story-section {
+    padding: 100px 80px;
+    text-align: center;
+    background: white;
+}
+
+.story-section h1 {
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.story-section p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.story-section button {
+    padding: 15px 35px;
+    background: #b57b45;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+    padding: 100px 80px;
+    text-align: center;
+}
+
+.newsletter h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.newsletter p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.newsletter-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.newsletter-box input {
+    width: 350px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.newsletter-box button {
+    padding: 15px 30px;
+    border: none;
+    background: #b57b45;
+    color: white;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: white;
+    color: black;
+    padding: 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    width: 140px;
+}
+
+.footer-contact h2 {
+    margin-bottom: 20px;
+}
+
+.footer-contact h3 {
+    margin-bottom: 12px;
+    font-weight: normal;
+}
+
+.footer-social img {
+    width: 50px;
+    margin-top: 15px;
+}
+
+.footer hr {
+    margin: 40px 0;
+    border: 1px solid #333;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards img {
+    width: 70px;
+    margin-left: 15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 992px) {
+
+    .navbar,
+    .hero,
+    .new-section,
+    .subscription-content,
+    .cafe-section,
+    .footer-container,
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-image,
+    .new-text,
+    .new-image,
+    .subscription-image,
+    .subscription-text,
+    .cafe-image,
+    .cafe-text {
+        width: 100%;
+    }
+
+    .categories,
+    .usp-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-box input {
+        width: 100%;
+    }
+
+    .hero-text h1,
+    .new-text h1,
+    .usp-title,
+    .brewing-section h1,
+    .cafe-text h1,
+    .story-section h1,
+    .newsletter h1 {
+        font-size: 40px;
+    }
+}
