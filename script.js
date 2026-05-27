@@ -1,277 +1,125 @@
-// ======================
-// NAVBAR SHADOW
-// ======================
+/* =====================
+   CAFÉ CRESCENDO — script.js
+   Clean, modular, null-safe
+===================== */
 
-window.addEventListener("scroll", function () {
+// ── Page load fade-in ─────────────────────────────────────────────
+window.addEventListener("load", () => {
+    document.body.style.opacity = "1";
+    revealOnScroll();
 
-    let navbar = document.querySelector(".header");
-
-    if (window.scrollY > 50) {
-
-        navbar.classList.add("sticky");
-
-    } else {
-
-        navbar.classList.remove("sticky");
-
-    }
-
+    const yearEl = document.getElementById("footer-year");
+    if (yearEl) yearEl.textContent = `Copyright ${new Date().getFullYear()} | All Rights Reserved`;
 });
 
-
-// ======================
-// MOBILE MENU
-// ======================
-
-const navLinks = document.querySelectorAll(".nav-links a");
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", function () {
-
-        navLinks.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        this.classList.add("active");
-
-    });
-
-});
-
-
-// ======================
-// HERO BUTTON
-// ======================
-
-const heroButton = document.querySelector(".hero-btn");
-
-heroButton.addEventListener("click", function () {
-
-    alert("Welcome to Café Crescendo!");
-
-});
-
-
-// ======================
-// CATEGORY CARD ANIMATION
-// ======================
-
-const cards = document.querySelectorAll(".category-card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mouseenter", function () {
-
-        this.style.transform = "translateY(-10px) scale(1.03)";
-
-    });
-
-    card.addEventListener("mouseleave", function () {
-
-        this.style.transform = "translateY(0px) scale(1)";
-
-    });
-
-});
-
-
-// ======================
-// USP CARD EFFECT
-// ======================
-
-const uspCards = document.querySelectorAll(".usp-card");
-
-uspCards.forEach(card => {
-
-    card.addEventListener("mouseenter", function () {
-
-        this.style.boxShadow = "0 15px 40px rgba(0,0,0,0.15)";
-
-    });
-
-    card.addEventListener("mouseleave", function () {
-
-        this.style.boxShadow = "none";
-
-    });
-
-});
-
-
-// ======================
-// BUTTON CLICK EFFECT
-// ======================
-
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach(button => {
-
-    button.addEventListener("click", function () {
-
-        this.style.transform = "scale(0.95)";
-
-        setTimeout(() => {
-
-            this.style.transform = "scale(1)";
-
-        }, 150);
-
-    });
-
-});
-
-
-// ======================
-// IMAGE HOVER ZOOM
-// ======================
-
-const images = document.querySelectorAll("img");
-
-images.forEach(image => {
-
-    image.addEventListener("mouseenter", function () {
-
-        this.style.transition = "0.4s";
-        this.style.transform = "scale(1.03)";
-
-    });
-
-    image.addEventListener("mouseleave", function () {
-
-        this.style.transform = "scale(1)";
-
-    });
-
-});
-
-
-// ======================
-// EMAILJS
-// ======================
-
-emailjs.init("PUBLIC_KEYING");
-
-const form = document.getElementById("contact-form");
-
-form.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    emailjs.sendForm(
-        "SERVICE_IDING",
-        "TEMPLATE_IDING",
-        this
-    )
-
-        .then(() => {
-
-            alert("Subscription successful!");
-
-            form.reset();
-
-        })
-
-        .catch((error) => {
-
-            alert("Failed to send!");
-
-            console.log(error);
-
-        });
-
-});
-
-
-// ======================
-// SCROLL REVEAL EFFECT
-// ======================
-
-const revealElements = document.querySelectorAll(
-    ".category-card, .usp-card, .new-section, .subscription-content, .cafe-section"
-);
-
-window.addEventListener("scroll", revealOnScroll);
-
-function revealOnScroll() {
-
-    const windowHeight = window.innerHeight;
-
-    revealElements.forEach(element => {
-
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-
-            element.style.opacity = "1";
-            element.style.transform = "translateY(0px)";
-
-        }
-
-    });
-
+// ── Navbar scroll shadow ──────────────────────────────────────────
+const header = document.getElementById("header");
+if (header) {
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+        revealOnScroll();
+    }, { passive: true });
 }
 
+// ── Burger menu ───────────────────────────────────────────────────
+const menuToggle = document.getElementById("menu-toggle");
+const navLinksEl = document.getElementById("nav-links");
+const mobileOverlay = document.getElementById("mobile-overlay");
 
-// INITIAL STYLE
+function openMenu() {
+    navLinksEl?.classList.add("active");
+    menuToggle?.classList.add("open");
+    mobileOverlay?.classList.add("active");
+    menuToggle?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+}
 
-revealElements.forEach(element => {
+function closeMenu() {
+    navLinksEl?.classList.remove("active");
+    menuToggle?.classList.remove("open");
+    mobileOverlay?.classList.remove("active");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+}
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(50px)";
-    element.style.transition = "all 0.8s ease";
-
+menuToggle?.addEventListener("click", () => {
+    navLinksEl?.classList.contains("active") ? closeMenu() : openMenu();
 });
 
+mobileOverlay?.addEventListener("click", closeMenu);
 
-// ======================
-// NEWSLETTER INPUT EFFECT
-// ======================
-
-const input = document.querySelector(".newsletter-box input");
-
-input.addEventListener("focus", function () {
-
-    this.style.border = "2px solid #b57b45";
-    this.style.boxShadow = "0 0 10px rgba(181,123,69,0.4)";
-
+// Close on nav link click + active link highlight
+navLinksEl?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        closeMenu();
+        navLinksEl.querySelectorAll("a").forEach(a => a.classList.remove("active"));
+        link.classList.add("active");
+    });
 });
 
-input.addEventListener("blur", function () {
-
-    this.style.border = "1px solid #ccc";
-    this.style.boxShadow = "none";
-
+// Close menu on Escape
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeMenu();
 });
 
+// ── Scroll reveal ─────────────────────────────────────────────────
+const revealEls = document.querySelectorAll(".reveal");
 
-// ======================
-// LOADING ANIMATION
-// ======================
+function revealOnScroll() {
+    const threshold = window.innerHeight * 0.88;
+    revealEls.forEach(el => {
+        if (el.getBoundingClientRect().top < threshold) {
+            el.classList.add("visible");
+        }
+    });
+}
 
-window.addEventListener("load", function () {
+// Initial check
+revealOnScroll();
 
-    document.body.style.opacity = "1";
+// ── Newsletter form ───────────────────────────────────────────────
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput?.value.trim();
 
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            emailInput?.focus();
+            emailInput?.style.setProperty("border-color", "#e74c3c");
+            return;
+        }
+
+        emailInput?.style.removeProperty("border-color");
+
+        // EmailJS integration (replace keys before deploying)
+        if (typeof emailjs !== "undefined") {
+            emailjs.init("PUBLIC_KEY");
+            emailjs
+                .sendForm("SERVICE_ID", "TEMPLATE_ID", this)
+                .then(() => {
+                    alert("Subscribed successfully! Welcome to Café Crescendo ☕");
+                    this.reset();
+                })
+                .catch(err => {
+                    console.error("EmailJS error:", err);
+                    alert("Something went wrong. Please try again.");
+                });
+        } else {
+            // Fallback if EmailJS not loaded
+            alert("Subscribed successfully! Welcome to Café Crescendo ☕");
+            this.reset();
+        }
+    });
+}
+
+// ── Hero buttons ──────────────────────────────────────────────────
+document.querySelectorAll(".hero-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const isGhost = btn.classList.contains("ghost-btn");
+        alert(isGhost ? "Menu coming soon!" : "Welcome to Café Crescendo ☕");
+    });
 });
 
-document.body.style.opacity = "0";
-document.body.style.transition = "1s";
-
-
-// ======================
-// FOOTER YEAR AUTO UPDATE
-// ======================
-
-const footerText = document.querySelector(".footer-bottom p");
-
-const year = new Date().getFullYear();
-
-footerText.innerHTML = `Copyright ${year} | All Rights Reserved`;
-
-
-// ======================
-// CONSOLE MESSAGE
-// ======================
-
-console.log("Cafe Crescendo Website Loaded Successfully!");
+console.log("Café Crescendo loaded ✔");

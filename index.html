@@ -2,377 +2,260 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Crescendo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/logo.jpg.png" type="image/png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Crescendo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="image/logo.jpg.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-
-    <header class="header">
-
+    <header class="header" id="header">
         <nav class="navbar">
-
             <div class="logo">
-                <img src="image/logo.jpg.png" alt="logo">
+                <img src="image/logo.jpg.png" alt="Café Crescendo Logo" />
             </div>
 
-            <ul class="nav-links">
-
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Offers</a></li>
                 <li><a href="#">Learn</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Our Presence</a></li>
-
             </ul>
 
-            <button class="nav-btn">GET THE APP</button>
-
+            <div class="nav-right">
+                <button class="nav-btn">GET THE APP</button>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
-
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
 
+    <!-- HERO -->
     <section class="hero">
-
         <div class="hero-text">
-
-            <h1>Robust, rich coffee, everyday</h1>
-
-            <p>
-                Great for beginners, get our French Press at
-                Flat 50% off when you buy a coffee pouch.
-            </p>
-
-            <button class="hero-btn">LEARN MORE</button>
-
+            <span class="hero-tag">☕ Premium Specialty Coffee</span>
+            <h1>Robust, rich<br><em>coffee</em>, everyday</h1>
+            <p>Great for beginners — get our French Press at flat 50% off when you buy a coffee pouch.</p>
+            <div class="hero-actions">
+                <button class="hero-btn primary-btn">LEARN MORE</button>
+                <button class="hero-btn ghost-btn">VIEW MENU</button>
+            </div>
         </div>
-
         <div class="hero-image">
-
-            <img src="image/photo.jpg" alt="coffee">
-
+            <div class="hero-img-wrap">
+                <img src="image/photo.jpg" alt="Coffee" />
+                <div class="hero-badge">50% OFF<br><small>French Press</small></div>
+            </div>
         </div>
-
     </section>
 
     <!-- SOCIAL ICONS -->
-
     <section class="social-section">
-
         <ul class="social-icons">
-
-            <li>
-                <a href="#">
-                    <img class="phot1" src="image/photo1.jpg.jpg" alt="">
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <img class="phot1" src="image/photo2.jpg.jpg" alt="">
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <img class="phot1" src="image/photo3.jpg.jpg" alt="">
-                </a>
-            </li>
-
+            <li><a href="#" aria-label="Social 1"><img src="image/photo1.jpg.jpg" alt="Social 1" /></a></li>
+            <li><a href="#" aria-label="Social 2"><img src="image/photo2.jpg.jpg" alt="Social 2" /></a></li>
+            <li><a href="#" aria-label="Social 3"><img src="image/photo3.jpg.jpg" alt="Social 3" /></a></li>
         </ul>
-
     </section>
 
-    <!-- CATEGORY SECTION -->
-
-    <section class="categories">
-
-        <div class="category-card">
-
-            <img src="/image/Ellipse 5.jpg" alt="">
-
-            <h3>ROASTED & GROUND COFFEE</h3>
-
+    <!-- CATEGORIES -->
+    <section class="categories" aria-label="Product Categories">
+        <div class="section-header reveal">
+            <span class="section-tag">Our Collection</span>
+            <h2>Crafted for Every Cup</h2>
         </div>
-
-        <div class="category-card">
-
-            <img src="/image/Ellipse 2.jpg" alt="">
-
-            <h3>BREWING EQUIPMENT</h3>
-
+        <div class="categories-grid">
+            <div class="category-card reveal">
+                <div class="category-img-wrap">
+                    <img src="/image/Ellipse 5.jpg" alt="Roasted & Ground Coffee" />
+                </div>
+                <h3>ROASTED &amp; GROUND COFFEE</h3>
+            </div>
+            <div class="category-card reveal">
+                <div class="category-img-wrap">
+                    <img src="/image/Ellipse 2.jpg" alt="Brewing Equipment" />
+                </div>
+                <h3>BREWING EQUIPMENT</h3>
+            </div>
+            <div class="category-card reveal">
+                <div class="category-img-wrap">
+                    <img src="/image/Ellipse 3.jpg" alt="Cold Coffee" />
+                </div>
+                <h3>COLD COFFEE</h3>
+            </div>
+            <div class="category-card reveal">
+                <div class="category-img-wrap">
+                    <img src="/image/Ellipse 4.jpg" alt="Black Coffee" />
+                </div>
+                <h3>BLACK COFFEE</h3>
+            </div>
         </div>
-
-        <div class="category-card">
-
-            <img src="/image/Ellipse 3.jpg" alt="">
-
-            <h3>COLD COFFEE</h3>
-
-        </div>
-
-        <div class="category-card">
-
-            <img src="/image/Ellipse 4.jpg" alt="">
-
-            <h3>BLACK COFFEE</h3>
-
-        </div>
-
     </section>
 
-    <!-- NEW SECTION -->
-
+    <!-- WHAT'S NEW -->
     <section class="new-section">
-
-        <div class="new-text">
-
-            <h1>What’s new in Café Crescendo?</h1>
-
-            <p>
-                Let’s start brewing! Check beginner-friendly products to get started.
-            </p>
-
-            <button>LEARN MORE</button>
-
+        <div class="new-image reveal">
+            <img src="/image/photos.jpg" alt="New Products" />
         </div>
-
-        <div class="new-image">
-
-            <img src="/image/photos.jpg" alt="">
-
+        <div class="new-text reveal">
+            <span class="section-tag">Just Arrived</span>
+            <h2>What's new in<br>Café Crescendo?</h2>
+            <p>Let's start brewing! Check beginner-friendly products to get started on your coffee journey.</p>
+            <button class="primary-btn">EXPLORE NOW</button>
         </div>
-
     </section>
 
     <!-- SUBSCRIPTION -->
-
     <section class="subscription">
-
-        <div class="subscription-content">
-
+        <div class="subscription-content reveal">
             <div class="subscription-image">
-
-                <img src="/image/315842120-505175491633764-4826115193293148689-n.jpg" alt="">
-
+                <img src="/image/315842120-505175491633764-4826115193293148689-n.jpg" alt="Subscription" />
             </div>
-
             <div class="subscription-text">
-
-                <h1>Brew More. Save More!</h1>
-
-                <p>
-                    WHEN YOU GET A SUBSCRIPTION FROM US, YOU:
-                </p>
-
+                <span class="section-tag light">Coffee Club</span>
+                <h2>Brew More.<br>Save More!</h2>
+                <p class="sub-label">WHEN YOU SUBSCRIBE, YOU GET:</p>
                 <ul>
-
-                    <li>Save up to 20%</li>
-                    <li>Doorstep deliveries</li>
-                    <li>Try different coffees</li>
-                    <li>Customize your plan</li>
-                    <li>Never run out of coffee</li>
-
+                    <li><span class="check">✓</span> Save up to 20%</li>
+                    <li><span class="check">✓</span> Doorstep deliveries</li>
+                    <li><span class="check">✓</span> Try different coffees</li>
+                    <li><span class="check">✓</span> Customize your plan</li>
+                    <li><span class="check">✓</span> Never run out of coffee</li>
                 </ul>
-
+                <button class="primary-btn">START SUBSCRIBING</button>
             </div>
-
         </div>
-
     </section>
 
-    <!-- USP SECTION -->
-
-    <section class="usp-section">
-
-        <h1 class="usp-title">USPs</h1>
-
+    <!-- USP -->
+    <section class="usp-section" aria-label="Our Advantages">
+        <div class="section-header reveal">
+            <span class="section-tag">Why Us</span>
+            <h2>The Crescendo Difference</h2>
+        </div>
         <div class="usp-container">
-
-            <div class="usp-card">
-
-                <img src="/image/wi_stars.jpg" alt="">
-
-                <h2>SPECIALITY COFFEE</h2>
-
-                <p>
-                    Speciality grade coffees rated above 100+ on taste.
-                </p>
-
+            <div class="usp-card reveal">
+                <div class="usp-icon">⭐</div>
+                <h3>SPECIALITY COFFEE</h3>
+                <p>Speciality grade coffees rated above 100+ on taste by certified Q-graders.</p>
             </div>
-
-            <div class="usp-card">
-
-                <img src="/image/wi_stars.jpg" alt="">
-
-                <h2>ROASTED FRESH</h2>
-
-                <p>
-                    Freshly roasted directly from our roastery.
-                </p>
-
+            <div class="usp-card reveal">
+                <div class="usp-icon">🔥</div>
+                <h3>ROASTED FRESH</h3>
+                <p>Freshly roasted directly from our roastery to your door within days.</p>
             </div>
-
-            <div class="usp-card">
-
-                <img src="/image/wi_stars.jpg" alt="">
-
-                <h2>DELICIOUS TASTE</h2>
-
-                <p>
-                    Making great taste accessible.
-                </p>
-
+            <div class="usp-card reveal">
+                <div class="usp-icon">☕</div>
+                <h3>DELICIOUS TASTE</h3>
+                <p>Making great specialty-grade taste accessible to every household.</p>
             </div>
-
         </div>
-
     </section>
 
-    <!-- BREWING SECTION -->
-
+    <!-- BREWING -->
     <section class="brewing-section">
-
-        <h1>Café Crescendo House Kolkata - What’s Brewing?</h1>
-
-        <h2>Cool Down With The New Cold Brew</h2>
-
-        <p>
-            “The hint of wine, coupled with the kick of coffee not only makes their
-            cold brew amazing to sip as is.”
-        </p>
-
-        <button>View More</button>
-
-    </section>
-
-    <!-- CAFE SECTION -->
-
-    <section class="cafe-section">
-
-        <div class="cafe-image">
-
-            <img src="/image/pixlr-image-generator-43f02ad8-5b9d-467b-98cc-5999f98992e8 1.png" alt="">
-
-        </div>
-
-        <div class="cafe-text">
-
-            <h1>OUR CAFE</h1>
-
-            <p>
-                Find Café Crescendo House near you to experience
-                the finest coffee selections.
+        <div class="brewing-inner reveal">
+            <span class="section-tag light">Featured</span>
+            <h2>Café Crescendo House Kolkata</h2>
+            <h3>Cool Down With The New Cold Brew</h3>
+            <p>"The hint of wine, coupled with the kick of coffee not only makes their cold brew amazing to sip as is."
             </p>
-
-            <button>Visit Our Cafe</button>
-
+            <button class="primary-btn">View More</button>
         </div>
-
     </section>
 
-    <!-- STORY SECTION -->
+    <!-- OUR CAFE -->
+    <section class="cafe-section">
+        <div class="cafe-image reveal">
+            <img src="/image/pixlr-image-generator-43f02ad8-5b9d-467b-98cc-5999f98992e8 1.png" alt="Our Cafe" />
+        </div>
+        <div class="cafe-text reveal">
+            <span class="section-tag">Visit Us</span>
+            <h2>OUR CAFÉ</h2>
+            <p>Find Café Crescendo House near you to experience the finest coffee selections in an inviting atmosphere.
+            </p>
+            <button class="primary-btn">Find a Location</button>
+        </div>
+    </section>
 
+    <!-- OUR STORY -->
     <section class="story-section">
-
-        <h1>OUR STORY</h1>
-
-        <p>
-            Founded in 2033 by Mounik Biswas and Sruti Biswas,
-            Café Crescendo was created to deliver great coffee experiences.
-        </p>
-
-        <button>Read More</button>
-
+        <div class="story-inner reveal">
+            <span class="section-tag">Our Heritage</span>
+            <h2>OUR STORY</h2>
+            <p>Founded in 2033 by Mounik Biswas and Sruti Biswas, Café Crescendo was created to deliver exceptional
+                coffee experiences — from farm to cup, with passion and precision.</p>
+            <button class="primary-btn">Read More</button>
+        </div>
     </section>
 
     <!-- NEWSLETTER -->
-
     <section class="newsletter">
-
-        <h1>Subscribe Now</h1>
-
-        <p>
-            Sign up for 10% off and exclusive coffee launches.
-        </p>
-
-        <form class="newsletter-box" id="contact-form">
-
-            <input type="email" name="user_email" placeholder="Enter your email" required>
-
-            <button type="submit">
-                Subscribe
-            </button>
-
-        </form>
-
+        <div class="newsletter-inner reveal">
+            <span class="section-tag">Stay Connected</span>
+            <h2>Join the Club</h2>
+            <p>Sign up for 10% off your first order and exclusive coffee launches.</p>
+            <form class="newsletter-box" id="contact-form" novalidate>
+                <input type="email" name="user_email" placeholder="Enter your email address" required />
+                <button type="submit" class="primary-btn">Subscribe</button>
+            </form>
+        </div>
     </section>
 
     <!-- FOOTER -->
-
     <footer class="footer">
-
         <div class="footer-container">
-
             <div class="footer-logo">
-
-                <img src="/image/logo.jpg.png" alt="">
-
+                <img src="/image/logo.jpg.png" alt="Café Crescendo Logo" />
+                <p>Premium specialty coffee<br>delivered to your door.</p>
             </div>
-
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Learn</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
             <div class="footer-contact">
-
-                <h2 style="color: #b57b45;">Contact</h2>
-
-                <h3>Call: +998 87 460 38 33</h3>
-
-                <h3>Email: ulugbekovartur2211@gmail.com</h3>
-
+                <h4>Contact</h4>
+                <p>📞 +998 87 460 38 33</p>
+                <p>✉️ ulugbekovartur2211@gmail.com</p>
             </div>
-
             <div class="footer-social">
-
-                <h3 style="color: #b57b45;">Follow Us</h3>
-
-                <a class="insta" href="https://www.instagram.com/artur.ll7/" target="_blank">
-
-                    <img src="/image/skill-icons_instagram.jpg" alt="">
-
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/artur.ll7/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <img src="/image/Instagram_icon.png-removebg-preview.png" alt="Instagram" />
                 </a>
-
             </div>
-
         </div>
-
-        <hr>
-
+        <hr />
         <div class="footer-bottom">
-
-            <p>Copyright 2032 | All Rights Reserved</p>
-
+            <p id="footer-year">Copyright 2026 | All Rights Reserved</p>
             <div class="cards">
-
-                <img src="/image/logos_visa.jpg" alt="">
-
-                <img src="/image/logos_mastercard.jpg" alt="">
-
+                <img src="/image/hd-mastercard-payment-logo-transparent-background-701751694777780z7xaiuu0sh-removebg-preview.png"
+                    alt="Visa" />
+                <img src="/image/kisspng-credit-card-visa-debit-card-payment-card-5b4e5de51d7760.3161212715318625011207-removebg-preview.png"
+                    alt="Mastercard" />
             </div>
-
         </div>
-
     </footer>
 
-    <!-- JAVASCRIPT -->
-
     <script src="script.js"></script>
-
 </body>
 
 </html>
